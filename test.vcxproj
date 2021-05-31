@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{03C023E4-0557-4D53-8595-374D14728B74}</ProjectGuid>
+    <RootNamespace>test</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\opencv420\build\include;$(IncludePath);$(SolutionDir)util;$(SolutionDir)util\IGRTframe;$(SolutionDir)util\OriginalTypes;$(SolutionDir)util\Mesh;$(SolutionDir)util\RTUtility;$(SolutionDir)util\FaceTrack;$(SolutionDir)util\utils;$(SolutionDir)libs;$(SolutionDir)libs\dlib\external\zlib;$(SolutionDir)libs\dlib\external\libjpeg;$(SolutionDir)libs\dlib\external\libpng;$(SolutionDir)util\Motor;$(SolutionDir)libs\HighSpeedProjector\new_projector_library\new_projector_library;$(SolutionDir)util\Basler;C:\Program Files\Basler\pylon 6\Development\include;$(SolutionDir)libs\dlib</IncludePath>
+    <LibraryPath>C:\opencv420\build\x64\vc15\lib;$(LibraryPath);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)libs\dlib\build\dlib\Release;$(SolutionDir)libs;$(SolutionDir)libs\wlab_HSP\lib;C:\Users\k2vision\Desktop\New3DPhyxel\library;C:\Program Files\Basler\pylon 6\Development\lib\x64</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opencv_world420.lib;dlib19.19.99_release_64bit_msvc1920.lib;DynaFlash100.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\include\ProjectorUtility.cpp" />
+    <ClCompile Include="..\libs\dlib\dlib\all\source.cpp" />
+    <ClCompile Include="..\util\IGRTframe\Camera.cpp" />
+    <ClCompile Include="..\util\Mesh\generateMesh.cpp" />
+    <ClCompile Include="..\util\Mesh\loadMesh.cpp" />
+    <ClCompile Include="..\util\pch.cpp" />
+    <ClCompile Include="..\util\RTUtility\dxHelpers.cpp" />
+    <ClCompile Include="..\util\utils\debug.cpp" />
+    <ClCompile Include="baslerClass.cpp" />
+    <ClCompile Include="DXRPathTracer.cpp" />
+    <ClCompile Include="FaceTrack.cpp" />
+    <ClCompile Include="HighSpeedProjector.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MotionManager.cpp" />
+    <ClCompile Include="SceneLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ProjectorUtility.h" />
+    <ClInclude Include="..\libs\HighSpeedProjector\new_projector_library\new_projector_library\DynaFlash.h" />
+    <ClInclude Include="..\util\IGRTframe\Camera.h" />
+    <ClInclude Include="..\util\IGRTframe\IGRTCommon.h" />
+    <ClInclude Include="..\util\IGRTframe\IGRTScreen.h" />
+    <ClInclude Include="..\util\IGRTframe\IGRTTracer.h" />
+    <ClInclude Include="..\util\IGRTframe\Material.h" />
+    <ClInclude Include="..\util\IGRTframe\Scene.h" />
+    <ClInclude Include="..\util\IGRTframe\Texture.h" />
+    <ClInclude Include="..\util\Mesh\generateMesh.h" />
+    <ClInclude Include="..\util\Mesh\loadMesh.h" />
+    <ClInclude Include="..\util\Mesh\Mesh.h" />
+    <ClInclude Include="..\util\Mesh\tiny_obj_loader.h" />
+    <ClInclude Include="..\util\Motor\CSmc.h" />
+    <ClInclude Include="..\util\Motor\CSmcCLI.h" />
+    <ClInclude Include="..\util\Motor\CSmcdef.h" />
+    <ClInclude Include="..\util\Motor\CSmcdefCLI.h" />
+    <ClInclude Include="..\util\OriginalTypes\originalType.h" />
+    <ClInclude Include="..\util\OriginalTypes\originalType_array.h" />
+    <ClInclude Include="..\util\OriginalTypes\originalType_math.h" />
+    <ClInclude Include="..\util\pch.h" />
+    <ClInclude Include="..\util\RTUtility\dxHelpers.h" />
+    <ClInclude Include="..\util\utils\debug.h" />
+    <ClInclude Include="..\util\utils\Error.h" />
+    <ClInclude Include="..\util\utils\Input.h" />
+    <ClInclude Include="..\util\utils\timer.h" />
+    <ClInclude Include="baslerClass.h" />
+    <ClInclude Include="DXRPathTracer.h" />
+    <ClInclude Include="FaceTrack.h" />
+    <ClInclude Include="HighSpeedProjector.h" />
+    <ClInclude Include="MotionManager.h" />
+    <ClInclude Include="SceneLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shader\DXRShader.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Library</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">6.3</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)bin\cso\%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

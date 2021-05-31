@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{43e9f1aa-b574-479a-a28b-26b6d4a9bc07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{1540518e-fcfa-4343-843a-eeeacd4f0e02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\IGRTframe">
+      <UniqueIdentifier>{eb31e3f1-aa43-4c21-94b9-6399c1aa4095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\Mesh">
+      <UniqueIdentifier>{b79484c7-30ee-47bb-bf7d-b942f300b9b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\OriginalTypes">
+      <UniqueIdentifier>{40f29d5c-43bd-4095-9c7a-e2d0c25b6ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\RTUtility">
+      <UniqueIdentifier>{282fb72c-b427-4d7a-b823-d5c1557c8eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\utils">
+      <UniqueIdentifier>{22876c7a-8749-4075-82b0-2f2b10321820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\Motor">
+      <UniqueIdentifier>{aa9f8251-b9c6-400c-a122-1daf2114ad61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\Basler">
+      <UniqueIdentifier>{85da9eb2-a10e-48ac-87c8-ae9f848f2cf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\FaceTrack">
+      <UniqueIdentifier>{e3daa9f3-b6a6-445d-99a6-361ac623f8d7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="DXRPathTracer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLoader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\pch.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\IGRTframe\Camera.cpp">
+      <Filter>utility\IGRTframe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\Mesh\generateMesh.cpp">
+      <Filter>utility\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\Mesh\loadMesh.cpp">
+      <Filter>utility\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\RTUtility\dxHelpers.cpp">
+      <Filter>utility\RTUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\utils\debug.cpp">
+      <Filter>utility\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\include\ProjectorUtility.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="MotionManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="HighSpeedProjector.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="FaceTrack.cpp">
+      <Filter>utility\FaceTrack</Filter>
+    </ClCompile>
+    <ClCompile Include="baslerClass.cpp">
+      <Filter>utility\Basler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\dlib\dlib\all\source.cpp">
+      <Filter>utility\FaceTrack</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DXRPathTracer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLoader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\pch.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\IGRTframe\Camera.h">
+      <Filter>utility\IGRTframe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\IGRTframe\IGRTCommon.h">
+      <Filter>utility\IGRTframe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\IGRTframe\IGRTScreen.h">
+      <Filter>utility\IGRTframe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\IGRTframe\IGRTTracer.h">
+      <Filter>utility\IGRTframe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\IGRTframe\Material.h">
+      <Filter>utility\IGRTframe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\IGRTframe\Scene.h">
+      <Filter>utility\IGRTframe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\IGRTframe\Texture.h">
+      <Filter>utility\IGRTframe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Mesh\generateMesh.h">
+      <Filter>utility\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Mesh\loadMesh.h">
+      <Filter>utility\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Mesh\Mesh.h">
+      <Filter>utility\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Mesh\tiny_obj_loader.h">
+      <Filter>utility\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\OriginalTypes\originalType.h">
+      <Filter>utility\OriginalTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\OriginalTypes\originalType_array.h">
+      <Filter>utility\OriginalTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\OriginalTypes\originalType_math.h">
+      <Filter>utility\OriginalTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\RTUtility\dxHelpers.h">
+      <Filter>utility\RTUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\utils\debug.h">
+      <Filter>utility\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\utils\Error.h">
+      <Filter>utility\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\utils\Input.h">
+      <Filter>utility\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\utils\timer.h">
+      <Filter>utility\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ProjectorUtility.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MotionManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="HighSpeedProjector.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="baslerClass.h">
+      <Filter>utility\Basler</Filter>
+    </ClInclude>
+    <ClInclude Include="FaceTrack.h">
+      <Filter>utility\FaceTrack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\HighSpeedProjector\new_projector_library\new_projector_library\DynaFlash.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Motor\CSmc.h">
+      <Filter>utility\Motor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Motor\CSmcCLI.h">
+      <Filter>utility\Motor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Motor\CSmcdef.h">
+      <Filter>utility\Motor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Motor\CSmcdefCLI.h">
+      <Filter>utility\Motor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shader\DXRShader.hlsl">
+      <Filter>shader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
