@@ -462,7 +462,7 @@ void rayGen()
 				uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
 				patternBuffer.InterlockedOr(pixelOffset, tmp);
 			}
-			if (ray.hitMaterial & 0b1000) {
+			/*if (ray.hitMaterial & 0b1000) {
 				bitDepth = resDepth * 4 - 1 - uint(floor(ray.hitPos.z / 50.0 * mtlResDepth.w) * resDepth / mtlResDepth.w);
 				r_ = uint(floor(r * 2 / PI * mtlResDepth.w) * resDepth / mtlResDepth.w) + off;
 				bitDepth = (bitDepth + r_) % patternNum;
@@ -470,7 +470,7 @@ void rayGen()
 				uint pixelOffset = (bitIndex / 32) * 4;
 				uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
 				patternBuffer.InterlockedOr(pixelOffset, tmp);
-			}
+			}*/
 		}
 
 		uint time_ = (time % patternNum);
@@ -530,32 +530,76 @@ void rayGen()
 						off = resDepth * 3;
 						r -= PI * 3.0 / 2.0;
 					}
+					
 					uint r_ = 0;
-
 					uint bitDepth = 0;
-					if (ray.hitMaterial & 0b0001) {
+					if (ray.hitMaterial == 0b0001) {
 						bitDepth = uint(floor(ray.hitPos.z / 50.0 * mtlResDepth.x) * resDepth / mtlResDepth.x);
 						r_ = uint(floor(r * 2 / PI * mtlResDepth.x) * resDepth / mtlResDepth.x) + off;
+						bitDepth = (bitDepth + r_) % patternNum;
+						uint bitIndex = launchDim.x * launchDim.y * bitDepth + bufferOffset;
+						uint pixelOffset = (bitIndex / 32) * 4;
+						uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
+						patternBuffer.InterlockedOr(pixelOffset, tmp);
+						hitDepth++;
 					}
-					else if (ray.hitMaterial & 0b0010) {
+					else if (ray.hitMaterial == 0b0010) {
 						bitDepth = resDepth * 2 - 1 - uint(floor(ray.hitPos.z / 50.0 * mtlResDepth.y) * resDepth / mtlResDepth.y);
 						r_ = uint(floor(r * 2 / PI * mtlResDepth.y) * resDepth / mtlResDepth.y) + off;
+						bitDepth = (bitDepth + r_) % patternNum;
+						uint bitIndex = launchDim.x * launchDim.y * bitDepth + bufferOffset;
+						uint pixelOffset = (bitIndex / 32) * 4;
+						uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
+						patternBuffer.InterlockedOr(pixelOffset, tmp);
+						hitDepth++;
 					}
-					else if (ray.hitMaterial & 0b0100) {
+					else if (ray.hitMaterial == 0b0100) {
 						bitDepth = resDepth * 2 + uint(floor(ray.hitPos.z / 50.0 * mtlResDepth.z) * resDepth / mtlResDepth.z);
 						r_ = uint(floor(r * 2 / PI * mtlResDepth.z) * resDepth / mtlResDepth.z) + off;
+						bitDepth = (bitDepth + r_) % patternNum;
+						uint bitIndex = launchDim.x * launchDim.y * bitDepth + bufferOffset;
+						uint pixelOffset = (bitIndex / 32) * 4;
+						uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
+						patternBuffer.InterlockedOr(pixelOffset, tmp);
+						hitDepth++;
 					}
-					else if (ray.hitMaterial & 0b1000) {
+					/*else if (ray.hitMaterial & 0b1000) {
 						bitDepth = resDepth * 4 - 1 - uint(floor(ray.hitPos.z / 50.0 * mtlResDepth.w) * resDepth / mtlResDepth.w);
 						r_ = uint(floor(r * 2 / PI * mtlResDepth.w) * resDepth / mtlResDepth.w) + off;
+						bitDepth = (bitDepth + r_) % patternNum;
+						uint bitIndex = launchDim.x * launchDim.y * bitDepth + bufferOffset;
+						uint pixelOffset = (bitIndex / 32) * 4;
+						uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
+						patternBuffer.InterlockedOr(pixelOffset, tmp);
+						hitDepth++;
+					}*/
+					else if (ray.hitMaterial == 0b0101) {
+						bitDepth = uint(floor(ray.hitPos.z / 50.0 * mtlResDepth.x) * resDepth / mtlResDepth.x);
+						r_ = uint(floor(r * 2 / PI * mtlResDepth.x) * resDepth / mtlResDepth.x) + off;
+						bitDepth = (bitDepth + r_) % patternNum;
+						uint bitIndex = launchDim.x * launchDim.y * bitDepth + bufferOffset;
+						uint pixelOffset = (bitIndex / 32) * 4;
+						uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
+						patternBuffer.InterlockedOr(pixelOffset, tmp);
+						hitDepth++;
+						bitDepth = resDepth * 2 + uint(floor(ray.hitPos.z / 50.0 * mtlResDepth.z) * resDepth / mtlResDepth.z);
+						r_ = uint(floor(r * 2 / PI * mtlResDepth.z) * resDepth / mtlResDepth.z) + off;
+						bitDepth = (bitDepth + r_) % patternNum;
+						bitIndex = launchDim.x * launchDim.y * bitDepth + bufferOffset;
+						pixelOffset = (bitIndex / 32) * 4;
+						tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
+						patternBuffer.InterlockedOr(pixelOffset, tmp);
+						hitDepth++;
 					}
-
-					bitDepth = (bitDepth + r_) % patternNum;
+					
+					/*bitDepth = (bitDepth + r_) % patternNum;
 					uint bitIndex = launchDim.x * launchDim.y * bitDepth + bufferOffset;
 					uint pixelOffset = (bitIndex / 32) * 4;
 					uint tmp = (0x80 << ((int)ceil((bitIndex % 32) / 8)) * 8) >> bitIndex % 8;
 					patternBuffer.InterlockedOr(pixelOffset, tmp);
-					hitDepth++;
+					hitDepth++;*/
+					
+
 				}
 			}
 		}
@@ -613,13 +657,13 @@ void closestHit(inout RayPayload payload, in BuiltInTriangleIntersectionAttribut
 		float4 texColor = tex.Load(int3(cood, 0)).rgba;
 
 		if (texColor.r > 0)			material |= 0b0001;
-		else if (texColor.b > 0)	material |= 0b0010;
-		else if (texColor.g > 0)	material |= 0b0100;
-		else if (texColor.a > 0)	material |= 0b1000;
-		/*
-		テクスチャを重ねる場合、ここの0を1に変更する。
-		実際にスクリーンを配置する際、水毛糸をRとして、反時計回りに、BGAとする
-		if (texColor.r > 0)			material |= 0b0001;
+		if (texColor.b > 0)	material |= 0b0010;
+		if (texColor.g > 0)	material |= 0b0100;
+		//if (texColor.a > 0)	material |= 0b1000;
+		
+		//テクスチャを重ねる場合、ここの0を1に変更する。
+		//実際にスクリーンを配置する際、水毛糸をRとして、反時計回りに、BGAとする
+		/*if (texColor.r > 0)			material |= 0b0001;
 		else if (texColor.b > 0)	material |= 0b0010;
 		else if (texColor.g > 0)	material |= 0b0100;
 		else if (texColor.a > 0)	material |= 0b1000;
